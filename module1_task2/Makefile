@@ -1,12 +1,12 @@
 .PHONY: build clean post
 
-build:
+build: ## Generate the website from the markdown and configuration files in the directory dist/
 	hugo
 
-clean:
+clean: ## Cleanup the content of the directory dist/
 	rm -rf dist/
 
-post:
+post: ## Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME
 	@if [ -z "$(POST_NAME)" ]; then \
 		echo "Error: POST_NAME environment variable is not set."; \
 		exit 1; \
