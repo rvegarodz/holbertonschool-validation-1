@@ -9,7 +9,7 @@ clean:
 
 post:
 	hugo new posts/${POST_NAME}.md
-	echo "---\ntitle: ${POST_TITLE}\ndate: `date Iseconds`\ndraft: true\n---" 
+	echo "---\ntitle: ${POST_TITLE}\ndate: `date -Iseconds`\ndraft: true\n---" 
 
 # Phony targets
-.PHONY: build clean
+.PHONY: build clean post
