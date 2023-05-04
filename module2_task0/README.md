@@ -15,5 +15,6 @@ This project can be built, run, tested, and cleaned using the following commands
 - `make stop`: stop the application
 - `make clean`: stop the application, delete the binary `awesome-api` and the log file `awesome-api.log`
 - `make test`: test the application by sending HTTP requests to `localhost:9999`
+- `make lint`: check the error
 
 To see the full list of available commands, you can run the `make help` command. 

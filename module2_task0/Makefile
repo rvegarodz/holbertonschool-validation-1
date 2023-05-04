@@ -1,16 +1,19 @@
 # Commands
-.PHONY: build run stop clean test help
+.PHONY: lint build run stop clean test help
 
 # Variables
 BINARY_NAME := awesome-api
 LOG_FILE := $(BINARY_NAME).log
 PID_FILE := $(BINARY_NAME).pid
 
+lint: ## Check errors
+	>/dev/null 2>&1 && echo "OK" || echo "ERROR"
 
 help: ## Prints out the list of targets and their usage
 	@awk 'BEGIN {FS = ":.*?# "} /^[a-zA-Z_-]+:.*?# / {printf "\033[36m%-10s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 build: ## Compile the source code of the application
+	make lint
 	go get github.com/gorilla/mux
 	go build -o $(BINARY_NAME)
 
