@@ -32,10 +32,8 @@ clean: ## Stop the application
 	-rm coverage-integration.out || true
 
 test: ## You want to test it to ensure that it behaves as expected
-	@echo "Testing HTTP endpoint /..."
-	@curl -sSf http://localhost:9999 || echo "TESTFAILED"
-	@echo "Testing HTTP endpoint /health..."
-	@curl -sSf http://localhost:9999/health || echo "TESTFAILED"
+	make unit-tests
+	make integration-tests
 
 unit-tests: ## Report of the unit-tests
 	go test -v -short -coverprofile=coverage-units.out
