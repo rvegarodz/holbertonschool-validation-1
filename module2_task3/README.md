@@ -17,5 +17,6 @@ This project can be built, run, tested, and cleaned using the following commands
 - `make test`: test the application by sending HTTP requests to `localhost:9999`
 - `make lint`: check the error
 - `make unit-tests`: print report of unit-test
+- `make integration-tests`: print report of integration-test
 
 To see the full list of available commands, you can run the `make help` command. 
