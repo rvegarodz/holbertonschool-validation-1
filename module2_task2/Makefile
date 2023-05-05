@@ -36,5 +36,5 @@ test: ## You want to test it to ensure that it behaves as expected
 	@curl -sSf http://localhost:9999/health || echo "TESTFAILED"
 
 unit-tests: ## Report of the unit-tests
-	go test -coverprofile=coverage-units.out
+	go tool cover -func=coverage-units.out | grep HelloHandler | awk '{print $3}'
 
