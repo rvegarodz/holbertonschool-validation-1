@@ -39,5 +39,5 @@ unit-tests: ## Report of the unit-tests
 	go test -v -short -coverprofile=coverage-units.out
 
 integration-tests: ## Report of the integration-tests
-	go test -v -short -coverprofile=coverage-integration.out
+	go test -v -coverprofile=coverage-integration.out
 
